@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS users;
+
+USE users;
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL
+);
+
+CREATE DATABASE IF NOT EXISTS apod;
+
+USE apod;
+
+CREATE TABLE nasa_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE,
+    title VARCHAR(255),
+    explanation TEXT,
+    hdurl VARCHAR(255)
+);
