@@ -45,7 +45,6 @@ async def login(request: Request, username: str = Form(...), password: str = For
     
         client = httpx.AsyncClient()
         apod_data = await client.get(url)
-        import pdb; pdb.set_trace()
         return templates.TemplateResponse("apod_data.html", {"request": request, "apod_data": apod_data.json()})
     else:
         # Credenciales no válidas, regresar a la página de login
