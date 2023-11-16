@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from starlette.responses import RedirectResponse
 import mysql.connector
+import httpx
 
 app = FastAPI()
 
@@ -40,7 +41,12 @@ async def login(request: Request, username: str = Form(...), password: str = For
 
     if user:
         # Credenciales válidas, redirigir a www.google.com
-        return RedirectResponse("http://localhost:8001/nasa_apod", status_code=status.HTTP_303_SEE_OTHER)
+        url = "http://fastapi_api_container:8001/nasa_apod"
+    
+        client = httpx.AsyncClient()
+        apod_data = await client.get(url)
+        import pdb; pdb.set_trace()
+        return templates.TemplateResponse("apod_data.html", {"request": request, "apod_data": apod_data.json()})
     else:
         # Credenciales no válidas, regresar a la página de login
         return templates.TemplateResponse("login.html", {"request": request, "message": "Credenciales incorrectas"})

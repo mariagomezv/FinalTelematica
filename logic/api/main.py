@@ -48,7 +48,7 @@ async def nasa_apod(request: Request):
             cursor.close()
             connection.close()
 
-        return  templates.TemplateResponse("index.html", {"request": request, "apod_data": apod_data})
+        return apod_data
 
     else:
         raise HTTPException(status_code=response.status_code, detail='Error al obtener datos de la NASA')

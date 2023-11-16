@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA APOD Data</title>
+</head>
+<body>
+    <h1>NASA Astronomy Picture of the Day</h1>
+    <p>Date: {{ apod_data.date }}</p>
+    <p>Title: {{ apod_data.title }}</p>
+    <p>Explanation: {{ apod_data.explanation }}</p>
+    <img src="{{ apod_data.hdurl }}" alt="NASA APOD">
+</body>
+</html>

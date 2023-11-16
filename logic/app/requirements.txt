@@ -3,3 +3,4 @@ uvicorn[standard]
 python-multipart
 mysql-connector-python
 Jinja2
+httpx
