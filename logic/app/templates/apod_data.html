@@ -4,12 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NASA APOD Data</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #003366;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>NASA Astronomy Picture of the Day</h1>
-    <p>Date: {{ apod_data.date }}</p>
-    <p>Title: {{ apod_data.title }}</p>
-    <p>Explanation: {{ apod_data.explanation }}</p>
-    <img src="{{ apod_data.hdurl }}" alt="NASA APOD">
+    <header>
+        <h1>NASA Astronomy Picture of the Day</h1>
+    </header>
+
+    <section>
+        <p><strong>Date:</strong> {{ apod_data.date }}</p>
+        <p><strong>Title:</strong> {{ apod_data.title }}</p>
+        <p><strong>Explanation:</strong> {{ apod_data.explanation }}</p>
+        <img src="{{ apod_data.hdurl }}" alt="NASA APOD">
+    </section>
 </body>
 </html>

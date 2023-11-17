@@ -3,18 +3,91 @@
 <head>
     <title>Registro</title>
 </head>
-<body>
-    <h1>Página de Registro</h1>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 60px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin:10px
+    }
+
+    button:hover {
+        background-color: #555;
+    }
     
-    <form method="post" action="/register">
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Registrarse</button>
-    </form>
-    <button onclick="window.location.href='/redirect-to-index'">Home</button>
+    .responsive {
+        padding: 10px 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column;
+    }
+</style>
+<body>
+    <div>
+        <h1>Página de Registro</h1>
+    
+        <form method="post" action="/register">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+            <button type="submit">Registrarse</button>
+        </form>
+        <div>
+        <button onclick="window.location.href='/redirect-to-index'">Home</button>
+    
+        </div>
+    </div>
 </body>
 </html>

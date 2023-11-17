@@ -1,10 +1,8 @@
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.templating import Jinja2Templates
 import httpx
 import mysql.connector
 
 app = FastAPI()
-templates = Jinja2Templates(directory="templates")
 
 # Configuración de la base de datos
 db_config = {
